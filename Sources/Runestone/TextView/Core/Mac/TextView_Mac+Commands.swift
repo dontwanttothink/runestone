@@ -98,7 +98,7 @@ public extension TextView {
         let selectedRange = selectedRange()
         if selectedRange.length > 0, let text = textViewController.text(in: selectedRange) {
             NSPasteboard.general.setString(text, forType: .string)
-            textViewController.addUndoOperationForReplacingText(in: selectedRange, with: preparedText)
+            textViewController.addUndoOperationForReplacingText(in: selectedRange, with: "")
             textViewController.replaceText(in: selectedRange, with: "")
         }
     }
